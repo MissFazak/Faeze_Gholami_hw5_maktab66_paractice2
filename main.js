@@ -2,6 +2,9 @@ function max() {
   if (arguments.length == 0) {
     return null;
   }
+  if(arguments[0]===''){
+    return 'Big Error'
+  }
   let maxed = 0n;
   try {
     for (let i in arguments) {
@@ -11,7 +14,7 @@ function max() {
       if (arguments[i] > maxed) {
         maxed = arguments[i];
       }
-      if (arguments[i] > Number.MAX_SAFE_INTEGER || arguments[0] === "") {
+      if (arguments[i] > Number.MAX_SAFE_INTEGER) {
         return error
       }
     }
